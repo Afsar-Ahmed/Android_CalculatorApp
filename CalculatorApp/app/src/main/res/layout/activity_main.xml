@@ -4,130 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="5dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/amountlb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
         android:text="Amount"
+        app:layout_constraintBottom_toBottomOf="@+id/amountValue"
+        app:layout_constraintEnd_toStartOf="@+id/amountValue"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/amountValue" />
 
     <TextView
         android:id="@+id/tiplb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginBottom="40dp"
         android:text="Tip %"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountlb" />
+        app:layout_constraintBottom_toTopOf="@+id/numOfPpl"
+        app:layout_constraintEnd_toStartOf="@+id/tipSpinner"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/othertipValue"
-        android:layout_width="149dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="76dp"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/tipSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountValue" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tipSpinner"
+        app:layout_constraintTop_toTopOf="@+id/tipSpinner"
+        app:layout_constraintVertical_bias="0.523" />
 
     <TextView
         android:id="@+id/numOfPpl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
-        android:text="# of People"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiplb" />
+        android:layout_marginBottom="18dp"
+        android:text="Number of People"
+        app:layout_constraintBottom_toTopOf="@+id/calc"
+        app:layout_constraintEnd_toStartOf="@+id/numOfPplValue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/tipSpinner"
-        android:layout_width="69dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/Tip_Percent"
+        app:layout_constraintBottom_toBottomOf="@+id/tiplb"
         app:layout_constraintEnd_toStartOf="@+id/othertipValue"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tiplb"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/tiplb" />
 
     <Spinner
         android:id="@+id/numOfPplValue"
         android:layout_width="211dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:entries="@array/numberOfPeople"
+        app:layout_constraintBottom_toTopOf="@+id/calc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toEndOf="@+id/numOfPpl"
-        app:layout_constraintTop_toBottomOf="@+id/othertipValue" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/numOfPpl" />
 
     <Button
         android:id="@+id/calc"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="37dp"
         android:text="Calculate"
+        app:layout_constraintBottom_toTopOf="@+id/tipTotal"
         app:layout_constraintEnd_toStartOf="@+id/clear"
-        app:layout_constraintHorizontal_bias="0.585"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numOfPpl" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/clear"
-        android:layout_width="79dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="164dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="@+id/calc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numOfPplValue" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/calc"
+        app:layout_constraintTop_toTopOf="@+id/calc" />
 
     <TextView
         android:id="@+id/tipTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="44dp"
-        android:text="Tip Total:"
+        android:layout_marginTop="330dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calc" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/totalLb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="28dp"
-        android:text="Something Else:"
+        android:layout_marginTop="33dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tipTotal" />
 
     <EditText
         android:id="@+id/amountValue"
-        android:layout_width="198dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/othertipValue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toEndOf="@+id/amountlb"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/amountlb" />
 
     <TextView
         android:id="@+id/perPerson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="24dp"
-        android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalLb" />
 
